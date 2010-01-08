@@ -1,5 +1,5 @@
 %define upstream_name    Dist-Zilla-PluginBundle-JQUELIN
-%define upstream_version 1.100080
+%define upstream_version 1.100081
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -20,28 +20,18 @@ BuildRequires: perl(Moose)
 BuildRequires: perl(Moose::Autobox)
 BuildRequires: perl(Test::More)
 BuildRequires: perl(Module::Build)
+
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
-This is a plugin bundle to load all plugins that I am using. It is
-equivalent to:
-
-    [AutoVersion]
-
-    ; -- fetch & generate files
-    [AllFiles]
-    [CompileTests]
-    [CriticTests]
-    [MetaTests]
-    [PodTests]
+This is a plugin bundle to load all dist-zilla plugins that jq is using.
 
 %prep
 %setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Build.PL installdirs=vendor
-
 ./Build
 
 %check
@@ -59,5 +49,3 @@ rm -rf %buildroot
 %doc Changes LICENSE README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
