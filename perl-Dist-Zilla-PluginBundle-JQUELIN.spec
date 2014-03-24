@@ -1,9 +1,9 @@
 %define upstream_name    Dist-Zilla-PluginBundle-JQUELIN
-%define upstream_version 1.101620
+%define upstream_version 1.111710
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Release:	1
 
 Summary:	Build & release a distribution like jquelin
 License:	GPL+ or Artistic
@@ -60,4 +60,5 @@ perl Build.PL installdirs=vendor
 %doc Changes LICENSE README
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
+
 
