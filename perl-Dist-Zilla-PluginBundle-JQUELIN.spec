@@ -1,15 +1,13 @@
 %define upstream_name    Dist-Zilla-PluginBundle-JQUELIN
-%define upstream_version 1.111710
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	4
+Version:	1.111710
+Release:	5
 
 Summary:	Build & release a distribution like jquelin
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Dist-Zilla-PluginBundle-JQUELIN
-Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Dist/%{upstream_name}-%{version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires: perl(Dist::Zilla::Plugin::ReportVersions::Tiny)
@@ -45,7 +43,7 @@ BuildArch:	noarch
 This is a plugin bundle to load all dist-zilla plugins that jq is using.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Build.PL installdirs=vendor
